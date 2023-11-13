@@ -1,10 +1,13 @@
 import Link from "../components/Link";
 
-export default function HomePage() {
+export default function HomePage({ rooms }) {
+  const onLights = rooms.filter((room) => room.isOn === true);
+  const countOnLights = onLights.length;
+
   return (
     <div>
       <h1>Home</h1>
-      <p>?? light(s) are on.</p>
+      <p>{countOnLights} light(s) are on.</p>
       <p>
         <Link href="/lights">All lights →</Link>
       </p>
